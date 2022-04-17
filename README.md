@@ -2,7 +2,7 @@
 A simple repository to demonstrate simple patterns like composite, factories and strategies.
 Used to convert a YAML configuration into a spark job.
 
-# Example configuration
+# Configuration Example and Structure
 
 ```yaml
 ---
@@ -56,6 +56,8 @@ Each operator entry has
       options:
         - custom yaml config that is used to initialise your operator
 ```
+
+# How to write your own operators
 
 To implement your custom operator implement the SparkOperator and SparkOperatorCompanion trait
 
