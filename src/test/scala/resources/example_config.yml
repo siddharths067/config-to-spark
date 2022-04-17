@@ -1,0 +1,37 @@
+---
+job_name: example_job
+job_description: An example job to demonstrate config to spark job conversion
+operators:
+  read_one:
+    type: read_file
+    options:
+      source: "/tmp/example.csv"
+      format: "csv"
+      header: true
+      columns:
+        - A
+        - B
+  read_two:
+    type: read_file
+    options:
+      source: "/tmp/example.csv"
+      format: "csv"
+      header: true
+      columns:
+        - A
+        - B
+  union_operator:
+    inputs:
+      - read_one
+      - read_two
+    type: union_dataframe
+
+  save_operator:
+    type: save_dataframe
+    inputs:
+      - union_operator
+    options:
+      target: "/tmp/example_output.csv"
+      format: "csv"
+      mode: "overwrite"
+...
