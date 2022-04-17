@@ -95,7 +95,7 @@ object ReadFileOperatorCompanion extends SparkOperatorCompanion[ReadFileOperator
 ```
 
 Then pass the companions to runConfigToSpark function
-```yaml
+```scala
 object ConfigToSpark extends App {
   private val sparkOperatorCompanions: immutable.Seq[SparkOperatorCompanion[_ <: SparkOperator]] =
     Vector[SparkOperatorCompanion[_ <: SparkOperator]](ReadFileOperatorCompanion,
